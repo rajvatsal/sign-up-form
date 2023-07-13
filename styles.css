@@ -152,7 +152,6 @@ body {
 main {
     flex: 1 1 auto;
     font-family: 'nunitobold';
-    padding-left: 40px;
     display: flex;
     flex-direction: column;
 }
@@ -187,8 +186,10 @@ section {
     font-family: "nunitosemibold";
 }
 
-button {
+main>button {
     align-self: first baseline;
+    padding: 0 0;
+    margin: 16px 0 0 40px;
 }
 
 main>:nth-last-child(1) {
@@ -197,4 +198,20 @@ main>:nth-last-child(1) {
 
 section label {
     display: block;
+}
+
+form#sign_up {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.219);
+    padding-bottom: 15px;
+}
+
+main>* {
+    padding-left: 40px;
+}
+
+form>:first-child {
+    margin-bottom: 0;
+    font-family:"DCC-ASH";
+    margin-top: 20px;
+    font-size: 50px;
 }
