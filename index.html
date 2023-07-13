@@ -14,41 +14,46 @@
         </div>
     </div>
     <main>
-        <p>Compete in a world class competition where people from around the glove participate to prove who's the best</p>    
+        <p>
+          
+            Welcome to Summit Showdown, the epitome of global rock climbing competitions. We unite climbers 
+            worldwide, pushing the limits of human capability. Join us as we crown the undisputed champions
+            of this exhilarating sport. 
+        </p>
         <form action="" method="get" id="sign_up">
             <section>
                 <p>
                     <label for="first_name">First name:</label>
-                    <input type="text" id="first_name" name="first_name" />
+                    <input type="text" id="first_name" name="first_name" required />
                 </p>
                 <p>
                     <label for="last_name">Last name:</label>
-                    <input type="text" id="last_name" name="last_name" />
+                    <input type="text" id="last_name" name="last_name" required />
                 </p>
             </section>
             <section>
                 <p>
                     <label for="user_mail">Email:</label>
-                    <input type="email" id="user_mail" name="user_mail" />
+                    <input type="email" id="user_mail" name="user_mail"required />
                 </p>
                 <p>
                     <label for="user_number">Phone number:</label>
-                    <input type="tel" id="user_number" name="user_number" />
+                    <input type="tel" id="user_number" name="user_number" required />
                 </p>
             </section>
             <section>
                 <p>
                     <label for="pwd">Password:</label>
-                    <input type="password" id="pwd" name="user_password" />
+                    <input type="password" id="pwd" name="user_password" required />
                 </p>
                 <p>
                     <label for="re-enter_password">Re-enter password:</label>
-                    <input type="password" id="re-enter_password" name="user_password" />
+                    <input type="password" id="re-enter_password" name="user_password" required />
                 </p>
             </section>
         </form>
-        <button type="submit" for="sign_up">create account</button>
-        <p>already have an account? <a>sign in</a></p>
+        <button type="submit" form="sign_up">create account</button>
+        <p>already have an account? <a href="#">sign in</a></p>
     </main> 
 </body>
 </html>
