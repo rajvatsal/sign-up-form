@@ -215,6 +215,7 @@ main>button {
     position: relative;
     display: inline-block;
     overflow: hidden;
+    transition: background 0.15s ease-in-out;
 }
 
 span.ripples {
@@ -223,7 +224,7 @@ span.ripples {
     transform: translate(-50%, -50%);
     pointer-events: none;
     border-radius: 50%;
-    animation: animate 1s linear infinite;
+    animation: animate 0.4s linear infinite;
 }
 
 @keyframes animate {
@@ -250,15 +251,15 @@ section label {
 
 form#sign_up {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.219);
-    padding-bottom: 15px;
+    padding: 40px 40px 20px;
+}
+
+form>:first-child {
+    margin: 0 0;
+    font-family:"DCC-ASH";
+    font-size: 50px;
 }
 
 main>* {
     padding-left: 40px;
-}
-
-form>:first-child {
-    margin-bottom: 0;
-    font-family:"DCC-ASH";
-    font-size: 50px;
 }
