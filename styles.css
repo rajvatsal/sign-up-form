@@ -150,7 +150,8 @@ img {
 .side-image {
     background-image: url(./imgs/bradley-dunn-YI8YDf9MXFA-unsplash-flipped.jpg);
     background-size: cover;
-    max-width: max(var(--side-img-width), var(--side-img-proper-width));
+   /* max-width: max(var(--side-img-width), var(--side-img-proper-width)); */
+    max-width: calc(calc(400/638)* 100vh);
     height: 100vh;
     flex: 0 0 auto;
 }
@@ -187,7 +188,6 @@ section {
 
 main>button:hover {
     background-color: var(--hover-button-color);
-    transform: scale(1.02);
 }
 
 :link,
@@ -202,7 +202,6 @@ main>button:hover {
 
 main>button {
     align-self: first baseline;
-    transition: 0.1s ease-in-out;
     margin: 16px 40px;
     padding: 13px 0;
     width: 185px;
@@ -213,6 +212,31 @@ main>button {
     border-radius: 5px;
     font-family: "nunitoextrabold";
     cursor: pointer;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+span.ripples {
+    position: absolute;
+    background: white;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 0.3;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
 }
 
 main>:nth-last-child(1) {
