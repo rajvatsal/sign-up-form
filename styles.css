@@ -228,6 +228,7 @@ main>button {
     display: inline-block;
     overflow: hidden;
     transition: background 0.15s ease-in-out;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 20%);
 }
 
 span.ripples {
@@ -305,7 +306,6 @@ input:valid:focus-visible {
     background-color: var(--valid-background-color);
     outline-color: var(--valid-border-color);
 }
-
 /* change color when filled with auto select */
 input:valid:-webkit-autofill,
 input:valid:-webkit-autofill:hover, 
