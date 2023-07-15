@@ -189,6 +189,7 @@ main>:nth-child(1) {
     max-width: 70ch;
     line-height: 1.5;
     margin-top: auto;
+    margin-bottom: 10px;
     font-size: large;
 }
 
@@ -254,7 +255,8 @@ span.ripples {
 }
 
 main>:nth-last-child(1) {
-    margin-bottom: auto;
+    margin-bottom: 61px;
+    margin-top: 0;
 }
 
 section label {
