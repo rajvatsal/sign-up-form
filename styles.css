@@ -319,3 +319,10 @@ input:invalid:-webkit-autofill:focus,
 input:invalid:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px rgba(255, 0, 0, 0.178) inset !important;
 }
+
+input.invalid:not(:valid) {
+    border-color: red;
+    background-color: rgba(255, 0, 0, 0.178);
+    box-shadow: 2px 2px 10px rgba(255, 0, 0, 0.226);
+    color: red;
+}

@@ -15,7 +15,6 @@
     </div>
     <main>
         <p>
-          
             Welcome to Summit Showdown, the epitome of global rock climbing competitions. We unite climbers 
             worldwide, pushing the limits of human capability. Join us as we crown the undisputed champions
             of this exhilarating sport. 
@@ -74,6 +73,14 @@
                 }, 400);
                 })
             })
+        // Invalid inputs that are not empty decoration
+        const inputs = document.querySelectorAll('input:invalid');
+        inputs.forEach(input => input.addEventListener('blur', decorateInvalids));
+    
+        function decorateInvalids(e) {
+            if(!e.target.value) return;
+            e.target.classList.add('invalid');
+        }
     </script>
 </body>
 </html>
