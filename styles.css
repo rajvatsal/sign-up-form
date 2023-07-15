@@ -1,4 +1,12 @@
 @font-face {
+    font-family: 'varela_roundregular';
+    src: url('./fonts/varela-round/varelaround-regular-webfont.woff2') format('woff2'),
+         url('./fonts/varela-round/varelaround-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'nunitoextralight';
     src: url('./fonts/nunito/nunito-extralight-webfont.woff2') format('woff2'),
          url('./fonts/nunito/nunito-extralight-webfont.woff') format('woff');
@@ -136,6 +144,10 @@
     --side-img-proper-width: calc(100vh * 0.67);
     --theme-color: #8C6F51;
     --hover-button-color: #785B3D; 
+    --input-background: #8c705141;
+    --valid-font-color: green;
+    --valid-background-color: rgba(144, 238, 144, 0.26);
+    --valid-border-color: lightgreen;
 }
 
 body {
@@ -246,7 +258,12 @@ main>:nth-last-child(1) {
 
 section label {
     display: block;
-    font-family: "nunitoextralight";
+    font-family: "nunitobold";
+    font-size: 12.5px;
+    padding-bottom: 2px;
+}
+section input {
+    height: 20px;
 }
 
 form#sign_up {
@@ -262,4 +279,43 @@ form>:first-child {
 
 main>* {
     padding-left: 40px;
+}
+
+input {
+    appearance: none;
+    border: 0.6px solid rgba(0, 0, 0, 0.144);
+    min-height: 24px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    min-height: 25px;
+}
+input:focus-visible {
+    outline-color: var(--theme-color);
+    background-color: var(--input-background)
+}
+
+input:focus-visible:invalid {
+    outline-color: red;
+    background-color: rgba(255, 0, 0, 0.178);
+}
+input:valid,
+input:valid:focus-visible {
+    color: var(--valid-font-color);
+    border-color: var(--valid-border-color);
+    background-color: var(--valid-background-color);
+    outline-color: var(--valid-border-color);
+}
+
+/* change color when filled with auto select */
+input:valid:-webkit-autofill,
+input:valid:-webkit-autofill:hover, 
+input:valid:-webkit-autofill:focus, 
+input:valid:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--valid-background-color) inset !important;
+}
+input:invalid:-webkit-autofill,
+input:invalid:-webkit-autofill:hover, 
+input:invalid:-webkit-autofill:focus, 
+input:invalid:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgba(255, 0, 0, 0.178) inset !important;
 }

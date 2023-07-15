@@ -25,30 +25,30 @@
             <section>
                 <p>
                     <label for="first_name">FIRST NAME</label>
-                    <input type="text" id="first_name" name="first_name" required />
+                    <input type="text" id="first_name" name="first_name" pattern="^[^0-9]*$" required />
                 </p>
                 <p>
                     <label for="last_name">LAST NAME</label>
-                    <input type="text" id="last_name" name="last_name" />
+                    <input type="text" id="last_name" name="last_name" pattern="^[^0-9]*$" required />
                 </p>
             </section>
             <section>
                 <p>
                     <label for="mail">EMAIL</label>
-                    <input type="email" id="mail" name="user_mail" />
+                    <input type="email" id="mail" name="user_mail" required />
                 </p>
                 <p>
-                    <label for="user_number">Phone number:</label>
-                    <input type="tel" id="user_number" name="user_number" required />
+                    <label for="user_number">PHONE NUMBER</label>
+                    <input type="tel" id="user_number" name="user_number" max="10ch" pattern="^[0-9]*$" required />
                 </p>
             </section>
             <section>
                 <p>
-                    <label for="pwd">Password:</label>
+                    <label for="pwd">PASSWORD</label>
                     <input type="password" id="pwd" name="user_password" required />
                 </p>
                 <p>
-                    <label for="re-enter_password">Re-enter password:</label>
+                    <label for="re-enter_password">CONFIRM PASSWORD</label>
                     <input type="password" id="re-enter_password" name="user_password" required />
                 </p>
             </section>
