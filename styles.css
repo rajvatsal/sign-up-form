@@ -152,6 +152,21 @@
     --shadow-color: rgba(0, 0, 0, 20%);
 }
 
+:root.dark {
+    background-color: #18181b;
+    color: #e8e6e3;
+    --theme-color: #C46D5E;
+    --shadow-color: #c46d5e11;
+    --accent-color: #2A9D8F;
+    --side-img-width: calc(100vw * 1/4);
+    --side-img-proper-width: calc(100vh * 0.67);
+    --hover-button-color: #c46d5e83; 
+    --input-background: #8c705141;
+    --valid-font-color: rgb(0, 255, 0);
+    --valid-background-color: rgba(144, 238, 144, 0.411);
+    --valid-border-color: lightgreen;
+}
+
 body {
     margin: 0 0;
     display: flex;
@@ -344,10 +359,33 @@ input.invalid::placeholder {
     color: transparent;
 }
 
+body>p.toggle_input {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="image"] {
+    width: 80px;
+    height: 40px;
+    border: 0px solid;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+    
+label[for="toggle_theme"] {
+    font-family: "nunitoextrabold";
+    font-size: 12px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 710px) {
     body {
         flex-wrap: wrap;
     }
+
     .side-image {
         max-width: 100vw;
         width: 100vw;
@@ -356,53 +394,12 @@ input.invalid::placeholder {
     main>:nth-child(1) {
         margin-top: 100px;
     }
-    input#toggle_theme[type="image"] {
+
+    body>p.toggle_input {
+        position: absolute;
         top: 102vh;
-
+        right: 20px;
+        display: flex;
+        flex-direction: column;
     }
-    body>label[for="toggle_theme"] {
-        top: 109vh;
-    }
-}
-    
-input[type="image"] {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    width: 80px;
-    height: 40px;
-    padding: 0 0;
-    margin: 0 0;
-    border: 0px solid;
-    transition: all 200ms ease-in-out;
-}
-    
-label[for="toggle_theme"] {
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    max-width: 80px;
-    font-family: "nunitoextrabold";
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 001ms ease-in-out;
-}
-
-input[type="image"]:hover {
-    cursor: pointer;
-}
-
-:root.dark {
-    background-color: #18181b;
-    color: #e8e6e3;
-    --theme-color: #C46D5E;
-    --shadow-color: #c46d5e11;
-    --accent-color: #2A9D8F;
-    --side-img-width: calc(100vw * 1/4);
-    --side-img-proper-width: calc(100vh * 0.67);
-    --hover-button-color: #c46d5e83; 
-    --input-background: #8c705141;
-    --valid-font-color: rgb(0, 255, 0);
-    --valid-background-color: rgba(144, 238, 144, 0.411);
-    --valid-border-color: lightgreen;
 }
