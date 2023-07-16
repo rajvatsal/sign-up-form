@@ -140,6 +140,7 @@
 }
 
 :root {
+    transition: all 200ms ease-in-out;
     --side-img-width: calc(100vw * 1/4);
     --side-img-proper-width: calc(100vh * 0.67);
     --theme-color: #8C6F51;
@@ -148,6 +149,7 @@
     --valid-font-color: green;
     --valid-background-color: rgba(144, 238, 144, 0.26);
     --valid-border-color: lightgreen;
+    --shadow-color: rgba(0, 0, 0, 20%);
 }
 
 body {
@@ -180,18 +182,18 @@ img {
     backdrop-filter: blur(9px);
 }
 main {
-    flex: 1 1 auto;
+    flex: 1 1 0;
     font-family: 'nunitobold';
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
 }
+
 main>:nth-child(1) {
     max-width: 70ch;
     line-height: 1.5;
-    margin-top: auto;
+    margin-top: 13.99vh;
     margin-bottom: 10px;
-    font-size: min(18px, 4vw);
+    font-size: clamp(14px, 1.81vw, 18px);
     padding-right: 10px;
 }
 
@@ -231,8 +233,8 @@ main>button {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    transition: background 0.15s ease-in-out;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 20%);
+    transition: background 200ms ease-in-out;
+    box-shadow: 5px 5px 5px var(--shadow-color);
 }
 
 span.ripples {
@@ -273,7 +275,7 @@ section p {
 }
 
 form#sign_up {
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.219);
+    box-shadow: 0 5px 20px var(--shadow-color);
     padding: 20px 40px 20px;
 }
 
@@ -338,7 +340,7 @@ input.invalid::placeholder {
     color: red;
 }
 ::placeholder {
-    transition: all 250ms ease-in-out;
+    transition: all 200ms ease-in-out;
     color: transparent;
 }
 
@@ -350,11 +352,19 @@ input.invalid::placeholder {
         max-width: 100vw;
         width: 100vw;
     }
+
     main>:nth-child(1) {
-        margin-top: 80px;
+        margin-top: 100px;
+    }
+    input#toggle_theme[type="image"] {
+        top: 102vh;
+
+    }
+    body>label[for="toggle_theme"] {
+        top: 109vh;
     }
 }
-
+    
 input[type="image"] {
     position: absolute;
     top: 10px;
@@ -364,4 +374,35 @@ input[type="image"] {
     padding: 0 0;
     margin: 0 0;
     border: 0px solid;
+    transition: all 200ms ease-in-out;
+}
+    
+label[for="toggle_theme"] {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    max-width: 80px;
+    font-family: "nunitoextrabold";
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 001ms ease-in-out;
+}
+
+input[type="image"]:hover {
+    cursor: pointer;
+}
+
+:root.dark {
+    background-color: #18181b;
+    color: #e8e6e3;
+    --theme-color: #C46D5E;
+    --shadow-color: #c46d5e11;
+    --accent-color: #2A9D8F;
+    --side-img-width: calc(100vw * 1/4);
+    --side-img-proper-width: calc(100vh * 0.67);
+    --hover-button-color: #c46d5e83; 
+    --input-background: #8c705141;
+    --valid-font-color: rgb(0, 255, 0);
+    --valid-background-color: rgba(144, 238, 144, 0.411);
+    --valid-border-color: lightgreen;
 }

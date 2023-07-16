@@ -13,7 +13,8 @@
             SUMMIT SHOWDOWN 
         </div>
     </div>
-        <input type="image" src="./imgs/logo-background-removed-color_black-cropped.png" /> 
+        <input type="image" id="toggle_theme" src="./imgs/logo-background-removed-color_black-cropped.png" /> 
+        <label for="toggle_theme">Toggle Theme</label>
     <main>
         <p>
             Welcome to Summit Showdown, the epitome of global rock climbing competitions. We unite climbers 
@@ -83,6 +84,16 @@
                 e.target.classList.remove('invalid');
             else
                 e.target.classList.add('invalid');
+        }
+
+        const darkTheme = document.querySelector('input[type="image"]');
+        const root = document.querySelector(':root');
+        darkTheme.addEventListener('click', toggleTheme);
+        function toggleTheme(e) {
+            root.classList.toggle('dark');
+            if(root.classList.contains('dark')) darkTheme.src='./imgs/logo-background_removed-color_white-cropped.png';
+            else
+                darkTheme.setAttribute('src','./imgs/logo-background-removed-color_black-cropped.png');
         }
     </script>
 </body>
