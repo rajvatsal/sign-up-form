@@ -191,13 +191,15 @@ main>:nth-child(1) {
     line-height: 1.5;
     margin-top: auto;
     margin-bottom: 10px;
-    font-size: large;
+    font-size: min(18px, 4vw);
+    padding-right: 10px;
 }
 
 section {
     display: flex;
-    gap: 50px;
+    column-gap: 50px;
     font-family: "nunitosemibold";
+    flex-wrap: wrap;
 }
 
 main>button:hover {
@@ -338,4 +340,17 @@ input.invalid::placeholder {
 ::placeholder {
     transition: all 250ms ease-in-out;
     color: transparent;
+}
+
+@media only screen and (max-width: 710px) {
+    body {
+        flex-wrap: wrap;
+    }
+    .side-image {
+        max-width: 100vw;
+        width: 100vw;
+    }
+    main>:nth-child(1) {
+        margin-top: 80px;
+    }
 }
