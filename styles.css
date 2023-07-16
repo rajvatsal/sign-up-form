@@ -260,13 +260,13 @@ main>:nth-last-child(1) {
 }
 
 section label {
-    display: block;
     font-family: "nunitobold";
     font-size: 12.5px;
     padding-bottom: 2px;
 }
-section input {
-    height: 20px;
+section p {
+    display: flex;
+    flex-direction: column;
 }
 
 form#sign_up {
@@ -287,7 +287,6 @@ main>* {
 input {
     appearance: none;
     border: 0.6px solid rgba(0, 0, 0, 0.144);
-    min-height: 24px;
     box-sizing: border-box;
     border-radius: 3px;
     min-height: 25px;
@@ -298,6 +297,7 @@ input:focus-visible {
 }
 
 input:focus-visible:invalid {
+    color: red;
     outline-color: red;
     background-color: rgba(255, 0, 0, 0.178);
 }
@@ -328,4 +328,13 @@ input.invalid:not(:valid) {
     background-color: rgba(255, 0, 0, 0.178);
     box-shadow: 1px 1px 10px rgba(255, 0, 0, 0.11);
     color: red;
+}
+
+input:focus-visible::placeholder,
+input.invalid::placeholder {
+    color: red;
+}
+::placeholder {
+    transition: all 250ms ease-in-out;
+    color: transparent;
 }

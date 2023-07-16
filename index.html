@@ -24,31 +24,31 @@
             <section>
                 <p>
                     <label for="first_name">FIRST NAME</label>
-                    <input type="text" id="first_name" name="first_name" pattern="^[^0-9]*$" required />
+                    <input type="text" id="first_name" name="first_name" pattern="^[^0-9]*$" placeholder="Required*" required />
                 </p>
                 <p>
                     <label for="last_name">LAST NAME</label>
-                    <input type="text" id="last_name" name="last_name" pattern="^[^0-9]*$" required />
+                    <input type="text" id="last_name" name="last_name" pattern="^[^0-9]*$" placeholder="Required*" required />
                 </p>
             </section>
             <section>
                 <p>
                     <label for="mail">EMAIL</label>
-                    <input type="email" id="mail" name="user_mail" required />
+                    <input type="email" id="mail" name="user_mail" placeholder="Required*" required />
                 </p>
                 <p>
                     <label for="user_number">PHONE NUMBER</label>
-                    <input type="tel" id="user_number" name="user_number" max="10ch" pattern="^[0-9]*$" required />
+                    <input type="tel" id="user_number" name="user_number" max="10" pattern="^[+0-9]*$" placeholder="Required*"  required />
                 </p>
             </section>
             <section>
                 <p>
                     <label for="pwd">PASSWORD</label>
-                    <input type="password" id="pwd" name="user_password" required />
+                    <input type="password" id="pwd" name="user_password" placeholder="Required*"  required />
                 </p>
                 <p>
                     <label for="re-enter_password">CONFIRM PASSWORD</label>
-                    <input type="password" id="re-enter_password" name="user_password" required />
+                    <input type="password" id="re-enter_password" name="user_password" placeholder="Required*"  required />
                 </p>
             </section>
         </form>
@@ -73,13 +73,15 @@
                 }, 400);
                 })
             })
-        // Invalid inputs that are not empty decoration
-        const inputs = document.querySelectorAll('input:invalid');
-        inputs.forEach(input => input.addEventListener('blur', decorateInvalids));
-    
+        // Decoration for invalid inputs that are not empty
+        const form = document.querySelector('form');
+        form.addEventListener('input', decorateInvalids);
         function decorateInvalids(e) {
-            if(!e.target.value) return;
-            e.target.classList.add('invalid');
+            if(e.target.tagName !== 'INPUT') return;
+            if(e.target.validity.valid)
+                e.target.classList.remove('invalid');
+            else
+                e.target.classList.add('invalid');
         }
     </script>
 </body>
