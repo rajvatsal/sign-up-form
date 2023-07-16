@@ -354,3 +354,14 @@ input.invalid::placeholder {
         margin-top: 80px;
     }
 }
+
+input[type="image"] {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 80px;
+    height: 40px;
+    padding: 0 0;
+    margin: 0 0;
+    border: 0px solid;
+}
