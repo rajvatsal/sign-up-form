@@ -376,7 +376,7 @@ input[type="image"] {
 }
     
 label[for="toggle_theme"] {
-    font-family: "nunitoextrabold";
+    font-family: "nunitobold";
     font-size: 12px;
     cursor: pointer;
 }
