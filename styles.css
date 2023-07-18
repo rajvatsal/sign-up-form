@@ -150,6 +150,7 @@
     --valid-background-color: rgba(144, 238, 144, 0.26);
     --valid-border-color: lightgreen;
     --shadow-color: rgba(0, 0, 0, 20%);
+    --label-color: #3a3a3c;
 }
 
 :root.dark {
@@ -165,6 +166,7 @@
     --valid-font-color: rgb(0, 255, 0);
     --valid-background-color: rgba(144, 238, 144, 0.411);
     --valid-border-color: lightgreen;
+    --label-color: white;
 }
 
 body {
@@ -376,9 +378,10 @@ input[type="image"] {
 }
     
 label[for="toggle_theme"] {
-    font-family: "nunitobold";
+    font-family: "nunitoextrabold_italic";
     font-size: 12px;
     cursor: pointer;
+    color: var(--label-color);
 }
 
 @media only screen and (max-width: 710px) {
