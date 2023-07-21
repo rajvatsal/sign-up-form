@@ -360,7 +360,6 @@ input.invalid::placeholder {
     transition: all 200ms ease-in-out;
     color: transparent;
 }
-
 body>p.toggle_input {
     position: absolute;
     top: 10px;
@@ -382,6 +381,10 @@ label[for="toggle_theme"] {
     font-size: 12px;
     cursor: pointer;
     color: var(--label-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
 
 @media only screen and (max-width: 710px) {
