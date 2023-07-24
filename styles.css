@@ -377,7 +377,7 @@ input[type="image"] {
 }
     
 label[for="toggle_theme"] {
-    font-family: "nunitoextrabold_italic";
+    font-family: "nunitobold_italic";
     font-size: 12px;
     cursor: pointer;
     color: var(--label-color);
