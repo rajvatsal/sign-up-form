@@ -14,8 +14,7 @@
         </div>
     </div>
         <p class="toggle_input">
-            <input type="image" id="toggle_theme" src="./imgs/logo-background-removed-color_black-cropped.png" />
-            <label for="toggle_theme">Switch Theme</label>
+            <input type="image" id="toggle_theme" src="./imgs/dark-mode.svg" />
         </p>
     <main>
         <p>
@@ -93,9 +92,9 @@
         darkTheme.addEventListener('click', toggleTheme);
         function toggleTheme(e) {
             root.classList.toggle('dark');
-            if(root.classList.contains('dark')) darkTheme.src='./imgs/logo-background_removed-color_white-cropped.png';
+            if(root.classList.contains('dark')) darkTheme.src='./imgs/light-mode.svg';
             else
-                darkTheme.setAttribute('src','./imgs/logo-background-removed-color_black-cropped.png');
+                darkTheme.setAttribute('src','./imgs/dark-mode.svg');
         }
     </script>
 </body>
